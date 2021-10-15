@@ -1,0 +1,8 @@
+Exercise 7.1:
+
+Player(ID, emailAddress, name)
+PlayerGame(gameID, playerID, score, cash, pieceLocation)
+Game(ID, time)
+PlayerGameProperty(gameID, playerID, propName, numHouses, numHotels)
+
+

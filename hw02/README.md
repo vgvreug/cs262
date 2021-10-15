@@ -1,13 +1,9 @@
-# CS 262 - Lab 4
-This lab is based on https://cs.calvin.edu/courses/cs/262/kvlinden/04analysis/lab.html
+# CS 262 - Lab 5
+This lab is based on https://cs.calvin.edu/courses/cs/262/kvlinden/05design/lab.html
 
-* What React construct is used to implement separate pages of an application (cf. separate webpages on the Web)?
-   * The Screen construct
-* What is the React Navigation concept that is analogous to a URL/URI on the Web?
-  * A route
-* The onPress event handler for the home screen component is specified as () => navigation.navigate('Details'). Can we just say navigation.navigate('Details')? Why or why not?
-  * No, because the syntax of the arrow function requires that the parentheses and arrow are there.
-* Explain how the hard-coded movie list is presented as a list of titles on the homepage.
-  * The titles are printed on the homepage, and each title is also a useState
-* Explain how the details screen presents the details of a single movie.
-  * The details screen gets the title, rating, and rescription from the relevent use case and print it onto the screen.
+* Of what benefit was the refactoring phase of this lab?
+   * Modularizing the system and having several smaller files instead of one large file, making the project more manageable
+* What do the export commands do?
+   * Allows a user to import the component into a different file
+* This application uses stack navigation. What does the stack do here? What is the deepest this stack can get in this application?
+   * The stack keeps track of what screens the user has navigated to. The deepest the stack can be is three screens - Home, Details, About

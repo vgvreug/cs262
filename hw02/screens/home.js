@@ -1,30 +1,50 @@
-import React, { useState } from 'react';
-import { Button, View, Text, TouchableOpacity, FlatList } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { ActivityIndicator, Button, View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {globalStyles} from '../styles/global';
-import{DetailsScreen} from './details';
+
 
 export default function HomeScreen({ navigation }) {
+    const [isLoading, setLoading] = useState(true);
+    const [data, setData] = useState([]);
 
-    /* Hardcode a "database"/list of movies. */
-    const [reviews, setReviews] = useState([
-        { title: "Fellowship of the Ring", rating: 8.8, key: '1',
-            description: "Some hobbits begin a quest."},
-        { title: "Two Towers", rating: 8.7, key: '2',
-            description: 'Some dark lords try to take over the world.'},
-        { title: "Return of the King", rating: 8.9, key: '3',
-            description: 'The dark lords are defeated, to much rejoicing.'},
-    ]);
+    const getPlayers = async () => {
+        try {
+         const response = await fetch('https://cs262-monopoly-service.herokuapp.com/players/');
+         const json = await response.json();
+         setData(json);
+       } catch (error) {
+         console.error(error);
+       } finally {
+         setLoading(false);
+       }
+     }
+    
+
+     useEffect(() => {
+        getPlayers();
+      }, []);
+
 
     return (
-        <View style={ globalStyles.title}>
+        <View style={{ flex: 1, padding: 24}}>
             {/* Get rid of that ugly button and, instead, display our list of movies. */}
-            <FlatList data={reviews} renderItem={({ item })=> (
-                <TouchableOpacity onPress={() => navigation.navigate('Details', item)}>
-                    <Text>{ item.title }</Text>
-                </TouchableOpacity>
-            )} />
+            {isLoading ? <ActivityIndicator/> : (
+            <FlatList
+                data={data}
+                keyExtractor={({ id }, index) => id}
+                renderItem={({ item }) => (
+                    <Text>{item.email}</Text>
+                )}
+            />
+
+        )}
+            <Button
+                onPress={() => navigation.navigate('About')}
+                title="About"
+                color="#841584"
+            />
         </View>
     );
 }
