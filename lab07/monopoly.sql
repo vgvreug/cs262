@@ -66,5 +66,3 @@ INSERT INTO PlayerGame VALUES (3, 3, 5500.00, 2000, 'Boardwalk');
 INSERT INTO PlayerGameProperty VALUES ('Baltic Avenue', 3, 1, 0, 0);
 INSERT INTO PlayerGameProperty VALUES ('States Avenue', 2, 2, 1, 0);
 INSERT INTO PlayerGameProperty VALUES ('Boardwalk', 3, 3, 0, 1);
-
-SELECT * FROM Game;
