@@ -7,6 +7,7 @@ import {globalStyles} from '../styles/global';
 export default function AboutScreen({ navigation }) {
     return(
     <View style={globalStyles.container}>
+        <Text>This application accesses information on Monopoly players.</Text>
         <Button
             onPress={() => navigation.navigate('Players')}
             title="Return to Home"
