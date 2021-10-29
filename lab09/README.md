@@ -22,4 +22,5 @@ of your service repo. See the instructions for how to do this under the
 &ldquo;Deploy&rdquo; tab in your Heroku application&rsquo;s dashboard.
 
 Made for CS 262 lab 9 found here: https://cs.calvin.edu/courses/cs/262/kvlinden/09is/lab.html
+
 Service URL: https://infinite-spire-94567.herokuapp.com/
