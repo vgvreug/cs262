@@ -1,0 +1,4 @@
+* I checked profile.js using the Prettier extention for VS code. 
+* Changes: Spacing was changed, maximum line length set, all quotes changed to double quotes (' to "), and import statement style changed.
+* There weren't any suggestions that we chose not to include.
+
